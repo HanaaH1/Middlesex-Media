@@ -1,29 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF 8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, 
-    initial-scale=1.0">
-    <title>Middlesex Media</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Middlesex Media</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Middlesex Media</h1>
-            <p>Stay up to date with what's happening in Middlesex!</p>
-        </div>
-        <div class="search-categories">
-            <input type="text" class="search-box" placeholder="Search news..." id="searchInput">
-            <div class="categories">
-                <button class="category-btn active" data-category="general">General</button>
-                <button class="category-btn" data-category="sports">Sports</button>
-                <button class="category-btn" data-category="politics">Politics</button>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+<!-- TOP BAR= middlesex county nj, date-->
+<div class="topbar">
+    <span>Middlesex County, NJ</span>
+    <span id="date"></span>
+</div>
+
+<!-- MASTHEAD= header -->
+ <header class="masthead">
+    <h1><img src="middlesexmedia.png"></h1>
+    <p class="tagline">Stay updated with what's happening in Middlesex County</p>
+ </header>
+
+<!-- NAV = navigation w/ different news categories-->
+<nav class="nav">
+    <a href="#">Politics</a>
+    <a href="#">Crime</a>
+    <a href="#">Business</a>
+    <a href="#">Entertainment</a>
+    <a href="#">Sports</a>
+</nav>
+
+<!-- FEATURE SECTION= featured news (have an article from each category) -->
+<section class="feature">
+    <h1>Featured News</h1>
+<div class="feature-side">
+    <article>
+        <h3>Crime</h3> <!--link to the crime nav tab-->
+        <h2>N.J. driver, 44, dies after suffering medical emergency, sideswiping another vehicle</h2>
+            <p>Unexpectedly, a 44-year-old driver from Sayreville, named Samuel Appiah-Debrah, suffered a medical emergency and sideswiped another vehicle, resulting in his death., that caused him to strike another vehicle on Route 535 in South Brunswick. As a result, he was pronounced dead at a hospital.</p>
+    </article>
+</div>
+
+</section>
+
+<hr>
+
+<!-- LATEST NEWS (based on date order)-->
+<section class="latest">
+    <h1>Latest News</h1>
+    <article class="news-row">
+        <h3>Fire in N.J. house with hoarding conditions kills dog, displaces resident</h3>
+        <p>...</p>
+    </article>
+</section>
+
+<footer> <!-- FOOTER= copyright --, the bottom thing with about, meet the founder, why we did this, contact us, etc. -->
+    <p>© 2026 Middlesex Media. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("date").innerText = new Date().toDateString();
+</script>
+
 </body>
+</html>
