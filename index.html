@@ -9,58 +9,75 @@
 
 <body>
 
-<!-- TOP BAR= middlesex county nj, date-->
 <div class="topbar">
     <span>Middlesex County, NJ</span>
     <span id="date"></span>
 </div>
 
-<!-- MASTHEAD= header -->
- <header class="masthead">
-    <h1><img src="middlesexmedia.png"></h1>
+<header class="masthead">
+    <a href="#" id="homeLogo">
+        <img src="middlesexmedia.png" alt="Logo">
+    </a>
     <p class="tagline">Stay updated with what's happening in Middlesex County</p>
- </header>
+</header>
 
-<!-- NAV = navigation w/ different news categories-->
 <nav class="nav">
-    <a href="#">Politics</a>
-    <a href="#">Crime</a>
-    <a href="#">Business</a>
-    <a href="#">Entertainment</a>
-    <a href="#">Sports</a>
+    <a href="#" data-category="All">All</a>
+    <a href="#" data-category="Crime">Crime</a>
+    <a href="#" data-category="Politics">Politics</a>
+    <a href="#" data-category="Business">Business</a>
+    <a href="#" data-category="Sports">Sports</a>
 </nav>
-
-<!-- FEATURE SECTION= featured news (have an article from each category) -->
+<section class="filtered" id="filteredSection" style="display: none;">
+    <h1 id="filteredTitle"></h1>
+    <div id="filteredContainer"></div>
+</section>
 <section class="feature">
     <h1>Featured News</h1>
-<div class="feature-side">
-    <article>
-        <h3>Crime</h3> <!--link to the crime nav tab-->
-        <h2>N.J. driver, 44, dies after suffering medical emergency, sideswiping another vehicle</h2>
-            <p>Unexpectedly, a 44-year-old driver from Sayreville, named Samuel Appiah-Debrah, suffered a medical emergency and sideswiped another vehicle, resulting in his death., that caused him to strike another vehicle on Route 535 in South Brunswick. As a result, he was pronounced dead at a hospital.</p>
+
+    <article data-category="Crime">
+        <a href="article1.html" class="article-link"> <!--make each article a clickable link-->
+            <h3>Crime</h3>
+            <h2>Pokemon Card Vendor Robbed</h2>
+            <p>Incident occurred after a Woodbridge event...</p>
+        </a>
     </article>
-</div>
+
+    <article data-category="Politics">
+        <h3>Politics</h3>
+        <h2>New Policy Debate in Middlesex</h2>
+        <p>Officials discuss upcoming legislation...</p>
+    </article>
 
 </section>
 
 <hr>
 
-<!-- LATEST NEWS (based on date order)-->
 <section class="latest">
     <h1>Latest News</h1>
-    <article class="news-row">
-        <h3>Fire in N.J. house with hoarding conditions kills dog, displaces resident</h3>
-        <p>...</p>
+
+    <article class="news-row" data-category="Crime">
+        <h3>House Fire Displaces Resident</h3>
+        <p>Emergency responders arrived quickly...</p>
     </article>
+
+    <article class="news-row" data-category="Business">
+        <h3>New Cafe Opens</h3>
+        <p>A student-friendly spot is trending...</p>
+    </article>
+
+    <article class="news-row" data-category="Sports">
+        <h3>Local Team Wins Championship</h3>
+        <p>The final game ended dramatically...</p>
+    </article>
+
 </section>
 
-<footer> <!-- FOOTER= copyright --, the bottom thing with about, meet the founder, why we did this, contact us, etc. -->
-    <p>© 2026 Middlesex Media. All rights reserved.</p>
+<footer>
+    <p>© 2026 Middlesex Media</p>
 </footer>
 
-<script>
-document.getElementById("date").innerText = new Date().toDateString();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
