@@ -1,54 +1,77 @@
-// date
-document.getElementById("date").innerText = new Date().toDateString();
+// =====================
+// DATE
+// =====================
+const dateEl = document.getElementById("date");
+if (dateEl) {
+  dateEl.innerText = new Date().toDateString();
+}
 
-// sections
+// =====================
+// ELEMENTS
+// =====================
 const featureSection = document.querySelector(".feature");
 const latestSection = document.querySelector(".latest");
 const filteredSection = document.getElementById("filteredSection");
 const filteredContainer = document.getElementById("filteredContainer");
 const filteredTitle = document.getElementById("filteredTitle");
-
-// elements
-const navLinks = document.querySelectorAll(".nav a");
 const articles = document.querySelectorAll("article");
 
-// NAV CLICK
-navLinks.forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
+// =====================
+// FILTER FUNCTION
+// =====================
+function showHome() {
+  if (!featureSection || !latestSection || !filteredSection) return;
 
-        const category = this.dataset.category;
+  featureSection.style.display = "block";
+  latestSection.style.display = "block";
+  filteredSection.style.display = "none";
+  filteredContainer.innerHTML = "";
+}
 
-        // hide homepage sections
-        featureSection.style.display = "none";
-        latestSection.style.display = "none";
+function filterArticles(category) {
+  if (!featureSection || !latestSection || !filteredSection) return;
 
-        // show filtered section
-        filteredSection.style.display = "block";
-        filteredContainer.innerHTML = ""; // clear old results
+  featureSection.style.display = "none";
+  latestSection.style.display = "none";
+  filteredSection.style.display = "block";
+  filteredContainer.innerHTML = "";
 
-        // loop through articles
-        articles.forEach(article => {
-            const articleCategory = article.dataset.category;
+  if (filteredTitle) {
+    filteredTitle.innerText = category + " News";
+  }
 
-            if (category === "All" || articleCategory === category) {
-                const clone = article.cloneNode(true);
-                filteredContainer.appendChild(clone);
-            }
-        });
-    });
-});
+  articles.forEach(article => {
+    const articleCategory = article.dataset.category;
+    if (category === "All" || articleCategory === category) {
+      const clone = article.cloneNode(true);
+      filteredContainer.appendChild(clone);
+    }
+  });
+}
 
-// LOGO CLICK → HOME RESET
+// =====================
+// READ URL HASH (on load + when it changes)
+// =====================
+function applyFromURL() {
+  const hash = window.location.hash.replace("#", "");
+
+  if (!hash) {
+    showHome();              // no hash → homepage
+  } else {
+    filterArticles(hash);    // #Crime → filter
+  }
+}
+
+window.addEventListener("load", applyFromURL);
+window.addEventListener("hashchange", applyFromURL);
+
+// =====================
+// LOGO → HOME
+// =====================
 const homeLogo = document.getElementById("homeLogo");
-
-homeLogo.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    // show homepage
-    featureSection.style.display = "block";
-    latestSection.style.display = "block";
-
-    // hide filtered section
-    filteredSection.style.display = "none";
-});
+if (homeLogo) {
+  homeLogo.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "index.html"; // clears hash + shows home
+  });
+}

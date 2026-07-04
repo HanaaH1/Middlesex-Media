@@ -16,8 +16,8 @@ body {
 .topbar {
     display: flex;
     justify-content: space-between;
-    padding: 8px 20px;
-    font-size: 13px;
+    padding: 8px 40px;
+    font-size: 20px;
     border-bottom: 1px solid #ddd;
     color: #555;
 }
@@ -29,7 +29,9 @@ body {
 }
 
 .logo img {
-    width: 150px;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
 }
 
 .tagline {
@@ -67,34 +69,33 @@ body {
 }
 
 .feature h1 {
-    font-size: 50px;
+    font-size: 45px;
     margin-bottom: 15px;
     color: rgb(33, 97, 33); 
 }
 
-.feature-side article {
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    border: 2px solid black;
+.feature article {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
 }
 
-.feature-side h3 {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.feature h3 {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.feature-side h2 {
-    font-size: 30px;
-    margin: 5px 0;
+.feature h2 {
+  font-size: 30px;
+  margin: 5px 0;
 }
 
-.feature-side p {
-    color: #555;
-    line-height: 1.5;
-    font-size: 16px;
+.feature p {
+  color: #555;
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 /* DIVIDER */
@@ -113,7 +114,7 @@ hr {
 }
 
 .latest h1 {
-    font-size: 22px;
+    font-size: 45px;
     margin-bottom: 20px;
     color: rgb(33, 97, 33);
 }
@@ -151,4 +152,20 @@ footer {
 
 .article-link:hover h2 {
     text-decoration: underline;
+}
+#filteredSection {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+#filteredSection h1 {
+  font-size: 45px;
+  color: rgb(33, 97, 33);
+  margin-bottom: 20px;
+}
+
+#filteredContainer article {
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
 }
