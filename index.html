@@ -65,6 +65,56 @@
 
 <footer>
     <p>© 2026 Middlesex Media</p>
+    <div class="subscription-box">
+    <h2>Subscribe to receive the latest news straight to your inbox!</h2>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button id="subscribeBtn">Subscribe</button>
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+    // Helper function to validate email format
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    document.getElementById("subscribeBtn").addEventListener("click", function() {
+        const emailInput = document.getElementById("email");
+        const messageDiv = document.getElementById("message");
+        const email = emailInput.value.trim();
+
+        // Clear previous messages
+        messageDiv.textContent = "";
+        messageDiv.className = "message";
+
+        // Validate email
+        if (!email) {
+            messageDiv.textContent = "Please enter your email.";
+            messageDiv.classList.add("error");
+            return;
+        }
+        if (!isValidEmail(email)) {
+            messageDiv.textContent = "Invalid email format.";
+            messageDiv.classList.add("error");
+            return;
+        }
+
+        // Simulate sending data to server
+        try {
+            // Example: Replace with actual API call
+            console.log("Subscribing:", email);
+
+            // Simulate success
+            messageDiv.textContent = "Subscription successful! Thank you.";
+            messageDiv.classList.add("success");
+            emailInput.value = "";
+        } catch (error) {
+            messageDiv.textContent = "Something went wrong. Please try again.";
+            messageDiv.classList.add("error");
+        }
+    });
+</script>
 </footer>
 
 <script src="script.js"></script>
