@@ -148,6 +148,11 @@ footer {
     color: #777;
 }
 
+.footer a {
+    padding: 20px;
+    text-color: green;
+}
+
 /* =====================
    DIVIDER
 ===================== */
