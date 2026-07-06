@@ -1,35 +1,256 @@
-/* MASTHEAD (DESKTOP FIX) */
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #ffffff;
+    color: #111;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* =====================
+   TOP BAR
+===================== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+/* =====================
+   MASTHEAD
+===================== */
+.masthead {
+    text-align: center;
+    padding: 20px 0;
+}
+
 .home .masthead img {
-    width: 220px;
+    width: clamp(160px, 18vw, 240px);
+    position: center;
 }
 
 .article .masthead img {
-    width: 150px;
+    width: 140px;   /* smaller, tighter header like real articles */
+    position: center;
 }
 
 .tagline {
-    font-size: 26px;
+    font-size: 28px;
+    margin-top: 8px;
 }
 
-/* NAV (DESKTOP FIX) */
+/* =====================
+   NAVIGATION
+===================== */
 .nav {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 18px 0;
+    gap: 30px;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .nav a {
+    text-decoration: none;
+    color: #111;
     font-size: 20px;
+    font-weight: 500;
 }
 
-/* HEADINGS (DESKTOP FIX) */
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   SECTIONS
+===================== */
+.feature,
+.latest,
+#filteredSection {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
 .feature h1,
 .latest h1,
 #filteredSection h1 {
     font-size: 40px;
+    margin-bottom: 20px;
+    color: rgb(33, 97, 33);
+}
+
+/* =====================
+   ARTICLES
+===================== */
+article {
+    border-top: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.feature h3 {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .feature h2 {
     font-size: 28px;
+    margin: 5px 0;
 }
+
+.feature p {
+    font-size: 16px;
+    color: #555;
+}
+
+.news-row h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.news-row p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* =====================
+   LINKS
+===================== */
+.article-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.article-link:hover h2 {
+    text-decoration: underline;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #777;
+}
+
+/* =====================
+   DIVIDER
+===================== */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+/* =====================
+   MOBILE (THIS IS THE MAGIC)
+===================== */
+@media (max-width: 768px) {
+
+    .topbar {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .masthead img {
+        max-width: 140px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    /* NAV → scrollable (REAL NEWS STYLE) */
+    .nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .nav a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    /* HEADINGS smaller */
+    .feature h1,
+    .latest h1,
+    #filteredSection h1 {
+        font-size: 26px;
+    }
+
+    .feature h2 {
+        font-size: 20px;
+    }
+
+    .news-row h3 {
+        font-size: 16px;
+    }
+
+    .feature p,
+    .news-row p {
+        font-size: 14px;
+    }
+
+    /* spacing tighter */
+    .feature,
+    .latest,
+    #filteredSection {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+}
+
+.subscription-box {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        width: 300px;
+        text-align: center;
+    }
+    input[type="email"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background: #28a745;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #218838;
+    }
+    .message {
+        margin-top: 10px;
+        font-size: 0.9em;
+    }
+    .error {
+        color: red;
+    }
+    .success {
+        color: green;
+    }
