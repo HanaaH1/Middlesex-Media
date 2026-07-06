@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Middlesex Media</title>
+<title>>New Brunswick, N.J. House Burns Down in Fire, Displacing Family and Killing Dog</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="home">
 
 <div class="topbar">
+    <a href="https://hanaah1.github.io/Middlesex-Media/"><img src="homeIcon.jpeg" alt="Home">Home</a>
     <span>Middlesex County, NJ</span>
     <span id="date"></span>
 </div>
-    <a href="https://hanaah1.github.io/Middlesex-Media/"><img src="homeIcon.jpeg" alt="Home"></a>
 
 <header class="masthead">
     <a href="#" id="homeLogo">
         <img src="middlesexmedia.png" alt="Logo">
     </a>
-    <p class="tagline">Stay updated with what's happening in Middlesex County</p>
+    <p class="tagline">Stay updated with what's happening in Middlesex, Somerset, and Union County(s)!</p>
 </header>
 
 <nav class="nav">
@@ -36,15 +36,70 @@
 </section>
 </body>
 <main class="container">
- <body class="article"> 
-
-    <h1>New Brunswick, N.J. House Burns Down in Fire, Displacing Family and Killing Dog</h1>
-    <img src="DogFire.jpeg" alt="Dog in Fire">
-    <p><strong>NEW BRUNSWICK, N.J. —</strong> At around 2:20 am on the 200 block of Somerset Street, a severe fire broke out on the second floor of a house in New Brunswick.</p>
+<body class="article">
+    <h1>>New Brunswick, N.J. House Burns Down in Fire, Displacing Family and Killing Dog</h1>
+    <img src="article1image1.jpeg">
+    <p><strong>NEW BRUNSWICK, N.J. —</strong>At around 2:20 am on the 200 block of Somerset Street, a severe fire broke out on the second floor of a house in New Brunswick.</p>
 
     <p>While no residents were injured, a dog was killed in the process.</p>
 
     <p>The New Brunwick Police Department reported that the fire had began upstairs and quickly spread throughout the house. Most of the damage was done to the second floor.</p>
-  </body>   
+<footer>
+    <p>© 2026 MSU Media</p>
+    <a href= "https://www.instagram.com/mediamiddlesex/">MSU Media Instagram</a>
+    <div class="subscription-box">
+    <h2>Subscribe to receive the latest news straight to your inbox!</h2>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button id="subscribeBtn">Subscribe</button>
+    <div id="message" class="message"></div>
+    </div>
+
+<script>
+    // Helper function to validate email format
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    document.getElementById("subscribeBtn").addEventListener("click", function() {
+        const emailInput = document.getElementById("email");
+        const messageDiv = document.getElementById("message");
+        const email = emailInput.value.trim();
+
+        // Clear previous messages
+        messageDiv.textContent = "";
+        messageDiv.className = "message";
+
+        // Validate email
+        if (!email) {
+            messageDiv.textContent = "Please enter your email.";
+            messageDiv.classList.add("error");
+            return;
+        }
+        if (!isValidEmail(email)) {
+            messageDiv.textContent = "Invalid email format.";
+            messageDiv.classList.add("error");
+            return;
+        }
+
+        // Simulate sending data to server
+        try {
+            // Example: Replace with actual API call
+            console.log("Subscribing:", email);
+
+            // Simulate success
+            messageDiv.textContent = "Subscription successful! Thank you.";
+            messageDiv.classList.add("success");
+            emailInput.value = "";
+        } catch (error) {
+            messageDiv.textContent = "Something went wrong. Please try again.";
+            messageDiv.classList.add("error");
+        }
+    });
+</script>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </main>
 </html>
